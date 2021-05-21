@@ -1,19 +1,6 @@
-import numpy as np
-
-
-def create_adjacency_list(elist,vlist):
-    adli=dict()
-    edges=elist.split(',')
-    for e in edges:
-        w=int(e.split()[1])
-        fr=list(e.split()[0])[0]
-        to=list(e.split()[0])[1]
-        if fr in adli:
-            adli[fr].append(to+str(w))
-        else:
-            adli[fr]=[]
-            adli[fr].append(to+str(w))
-    return adli
+import sys
+sys.path.append('/home/ved/Documents/Skills/progrmming/Algorithms/Graphs/adjacency_list')
+import adjacency_list as al
 
 ver= input("list down all vertices of the graph as a string: ")
 vlist=list(ver)
@@ -25,7 +12,6 @@ print("eg. 12 5,23 2,31 5 and so on..",end="")
 ed=input("where 12 5 shows if there is edge to edge 1 to 2 with edgeweight: ")
 print("No. of edges  in the graph is "+str(len(ed.split(','))))
 
-a=dict()
-a=create_adjacency_list(ed, vlist)
+a=al.create_adjacency_list(ed, vlist)
 print("\nAdjacency list: ")
 print(a)
