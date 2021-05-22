@@ -3,10 +3,10 @@ def dfs(adli,vlist,start_vertex):
     head=start_vertex
     unvisited=vlist.copy()
     stack=[]
-    dfs=[]
+    dfslist=[]
     while(len(unvisited)!=0):
         if head in unvisited:
-            dfs.append(head)
+            dfslist.append(head)
             unvisited.remove(head)
             if head in adli:
                 neighbourww=adli[head]
@@ -16,7 +16,7 @@ def dfs(adli,vlist,start_vertex):
                     neighbours.append(e)
                 for e in neighbours:
                     stack.append(e)
-        if len(unvisited)!=0:
+        if len(stack)!=0:
             head=stack.pop()
-    return dfs
+    return dfslist
 
