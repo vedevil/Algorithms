@@ -13,4 +13,5 @@ ed=input("where 12 5 shows if there is edge to edge 1 to 2 with edgeweight: ")
 print("No. of edges  in the graph is "+str(len(ed.split(','))))
 
 c=noc.no_of_components(vlist, ed)
+print("No. of connected components is: ",end="")
 print(c)
