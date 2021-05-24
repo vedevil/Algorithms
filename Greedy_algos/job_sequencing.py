@@ -19,6 +19,8 @@ for j in range(n):
     max_profit=max(inp['profit'])
     ind=inp['profit'].index(max_profit)
     d=int(inp['deadline'][ind])
+    if d> availibilty:
+        d=availibilty
     if d <= availibilty:
         for s in range(d-1,-1,-1):
             if out[s]=='free0':
