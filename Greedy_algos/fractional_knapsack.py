@@ -40,6 +40,7 @@ while weight_limit!=0:
         inp['weight'].pop(ind)
         inp['value'].pop(ind)
         weight_limit=0
+    ratio.pop(ind)
 print("items knapsack can hold are: ")
 for i in range(len(out['object_name'])):
     print(str(out['object_name'][i])+str("   ")+str(out['weight'][i])+str("   ")+str(out['value'][i]))
