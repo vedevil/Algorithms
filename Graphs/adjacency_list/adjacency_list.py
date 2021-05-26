@@ -13,11 +13,11 @@ def create_adjacency_list(elist,vlist):
         else:
             adli[fr]=[]
             adli[fr].append(to+str(w))
-        # if to in adli:
-        #     adli[to].append(fr+str(w))
-        # else:
-        #     adli[to]=[]
-        #     adli[to].append(fr+str(w))
+        if to in adli:
+            adli[to].append(fr+str(w))
+        else:
+            adli[to]=[]
+            adli[to].append(fr+str(w))
     return adli
 
 
