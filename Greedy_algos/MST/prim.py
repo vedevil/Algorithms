@@ -11,25 +11,34 @@ ed=input("where 12 5 shows if there is edge to edge 1 to 2 with edgeweight: ")
 print("No. of edges  in the graph is "+str(len(ed.split(','))))
 adli=al.create_adjacency_list(ed, vlist)
 current=vlist[0]
-mst=dict()
+mst_edges=[]
 weight_assigned=dict()
+assigned_to=dict()
 unvisited=[]
-last=None
+mstset=[]
+weight=0
 for v in vlist:
-    unvisited.append(v)
+    unvisited.append(v) 
 while len(unvisited)!=0:
     for n in adli[current]:
-        if n[0] != last:
-            weight_assigned[n[0]]=int(n[1:])
-    min_key=min(weight_assigned,key=weight_assigned.get)
-    if min_key in mst:
-        mst[min_key]=None
-    mst[current]=min_key+str(weight_assigned[min_key])
+        if n[0] not in mstset:
+            if n[0] in weight_assigned and int(n[1:])<weight_assigned[n[0]]:
+                assigned_to[n[0]]=current
+                weight_assigned[n[0]]=int(n[1:])
+            if n[0] not in weight_assigned:
+                assigned_to[n[0]]=current
+                weight_assigned[n[0]]=int(n[1:])
     unvisited.remove(current)
-    last=current
-    current=min_key
-    weight_assigned={}    
-print(mst)
+    if len(unvisited)!=0:
+        min_key=min(weight_assigned,key=weight_assigned.get)
+        mst_edges.append(str(assigned_to[min_key])+str(min_key))
+        weight+=weight_assigned[min_key]
+        mstset.append(current)
+        current=min_key
+        weight_assigned.pop(min_key)
+        assigned_to.pop(min_key)
+print(mst_edges)
+print("weight of the tree is: "+str(weight))
     
     
     
