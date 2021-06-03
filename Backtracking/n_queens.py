@@ -3,13 +3,12 @@ total=0
 def under_attack(m,r,c): 
     underattack=False
     num_rows,num_cols=m.shape
-    for column in range(num_cols):
-        count=0
-        for row in range(num_rows):
-            if m[row][column]=='Q':
-                count+=1
-        if count>1:
-            underattack= True
+    count=0
+    for row in range(num_rows):
+        if m[row][c]=='Q':
+            count+=1
+    if count>1:
+        underattack= True
     if r+1<num_rows:
         if m[r+1][c]=='Q':
             underattack=True
