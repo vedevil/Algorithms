@@ -1,0 +1,2 @@
+abcd
+ab 3,ba 8,bc 2,ca 5,da 2,ad 7,cd 1

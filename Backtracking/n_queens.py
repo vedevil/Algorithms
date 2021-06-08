@@ -9,24 +9,9 @@ def under_attack(m,r,c):
             count+=1
     if count>1:
         underattack= True
-    if r+1<num_rows:
-        if m[r+1][c]=='Q':
-            underattack=True
-        if c+1<num_cols:
-            if m[r+1][c+1]=='Q':
-                underattack= True
-        if c-1>=0:
-            if m[r+1][c-1]=='Q':
-                underattack= True
-    if r-1>=0:
-        if m[r-1][c]=='Q':
-            underattack=True
-        if c+1<num_cols:
-            if m[r-1][c+1]=='Q':
-                underattack= True
-        if c-1>=0:
-            if m[r-1][c-1]=='Q':
-                underattack= True
+    if r>c:
+        while c>=0:
+            if 
     return underattack
    
 def n_queens(si,ei,m):

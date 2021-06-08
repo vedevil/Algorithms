@@ -1,0 +1,18 @@
+5
+a
+b c d e
+f g h
+i j k
+l
+ab 9,ac 7,ad 3,ae 2
+bf 4,bg 2,bh 1
+cf 2,cg 7
+dh 11
+eg 11,eh 8
+fi 6,fj 6
+gi 4,gj 3
+hj 5,hk 6
+il 4
+jl 2
+kl 5
+ll 0
